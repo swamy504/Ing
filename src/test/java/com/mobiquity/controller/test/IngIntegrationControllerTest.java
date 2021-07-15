@@ -41,7 +41,7 @@ public class IngIntegrationControllerTest {
 		String json = result.getResponse().getContentAsString();
 		List<IngResponse> response = objectMapper.readValue(json, new TypeReference<List<IngResponse>>() { });
 		assertNotNull(response);
-		assertEquals("Maastricht", response.get(0).getAddress().getCity());
+		assertEquals("Maastricht".toUpperCase(), response.get(0).getAddress().getCity().toUpperCase());
 		}
 
 	@Test
